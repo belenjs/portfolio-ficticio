@@ -8,10 +8,10 @@ La aplicación consiste en una página web de portfolio en la que se presenta un
 La web estará diseñada para adaptarse a diferentes tamaños de pantalla y contará con distintas secciones para organizar el contenido.
 
 ## Estructura del proyecto
-portfolio-ficticio/
-├── index.html
-├── styles.css
-└── README.md
+portfolio-ficticio:
+- /index.html
+- /styles.css
+- /README.md
 
 ## Tecnologías utilizadas
 - HTML5
@@ -28,6 +28,7 @@ La página estará formada por las siguientes secciones:
 - Portfolio
 - Contacto
 - Footer
+
 La sección de portfolio incluirá una galería con diferentes proyectos ficticios.
 
 ## Características
