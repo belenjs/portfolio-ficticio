@@ -11,12 +11,16 @@
     /* Tipografía */
     --font-base: Arial, Helvetica, sans-serif;
     --font-heading: "Rock Salt", cursive;
+
+    /* BORDES */
+    --border-radius: 10px;
 }
 
 /* ESTILOS GENERALES */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,4 +31,45 @@ body {
 
 h1 {
     font-family: var(--font-heading);
+    font-size: 2.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+/* ESTILOS TOPBAR Y NAVBAR */
+header {
+    padding: 20px 40px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.topbar-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.topbar-nav a:hover {
+    color: var(--lilac);
+}
+
+/* ESTILOS BOTONES */
+.topbar-contact a {
+    background-color: var(--rasperry);
+    padding: 10px 30px;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+}
+
+.topbar-contact a:hover {
+    background-color: var(--indigo-velvet);
+    color: var(--light-blue);
 }
