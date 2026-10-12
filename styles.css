@@ -2,7 +2,7 @@
     /* Colores */
     --color-principal: #10121A;
     --blue: #25587F;
-    --light-blue: #88A6C6;
+    --light-blue: #347bc6;
     --rasperry: #A51D71;
     --lilac: #C4A7CF;
     --indigo-velvet: #54217B;
@@ -31,7 +31,16 @@ body {
 
 h1 {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 3.2rem;
+    color: var(--light-blue);
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 a {
@@ -62,14 +71,79 @@ header {
 }
 
 /* ESTILOS BOTONES */
-.topbar-contact a {
-    background-color: var(--rasperry);
+
+.button {
     padding: 10px 30px;
     border-radius: var(--border-radius);
     font-weight: bold;
+    display: inline-block;
 }
 
-.topbar-contact a:hover {
+.button-navbar {
     background-color: var(--indigo-velvet);
-    color: var(--light-blue);
+    color: var(--text);
+
 }
+
+.button-navbar:hover {
+    background-color: var(--lilac);
+    color: var(--color-principal);
+}
+
+.button-primary {
+    background-color: var(--light-blue);
+    color: var(--color-principal);
+}
+
+.button-primary:hover {
+    background-color: var(--rasperry);
+    color:var(--text);
+}
+
+/* HERO */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    gap: 80px;
+    padding: 20px 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-presentation {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.presentation-explosion {
+    margin-bottom: 30px;
+}
+
+.explosion-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: var(--rasperry);
+    
+}
+
+.text-presentation {
+    color: var(--lilac);
+    font-style: italic;
+}
+
+.hero img {
+    width: 550px;
+    border-radius: var(--border-radius);
+    max-width: 100%;
+    height: auto;
+}
+
