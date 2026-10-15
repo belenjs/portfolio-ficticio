@@ -268,3 +268,30 @@ header {
     margin-bottom: 40px;
 }
 
+
+/* SECTION PROJECTS */
+.projects {
+    margin-top: 140px;
+}
+
+.title-projects {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-project {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(from var(--blue) r g b / 20%);
+    border-radius: var(--border-radius);
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 20px 40px;
+}
