@@ -1,5 +1,5 @@
 :root {
-    /* Colores */
+    /* COLORS */
     --color-principal: #10121A;
     --blue: #153147;
     --light-blue: #347bc6;
@@ -8,15 +8,15 @@
     --indigo-velvet: #54217B;
     --text: #f4f2f5;
 
-    /* Tipografía */
+    /* FONTS */
     --font-base: Arial, Helvetica, sans-serif;
     --font-heading: "Rock Salt", cursive;
 
-    /* BORDES */
+    /* BORDERS */
     --border-radius: 10px;
 }
 
-/* ESTILOS GENERALES */
+/* GENERAL STYLE */
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +39,10 @@ h2 {
     font-size: 2.2rem;
 }
 
+h3 {
+    font-size: 1.8rem;
+}
+
 p {
     font-size: 1.2rem;
 }
@@ -49,7 +53,7 @@ a {
     text-transform: uppercase;
 }
 
-/* ESTILOS TOPBAR Y NAVBAR */
+/* TOPBAR AND NAVBAR  STYLE*/
 header {
     padding: 20px 40px;
 }
@@ -70,7 +74,7 @@ header {
     color: var(--lilac);
 }
 
-/* ESTILOS BOTONES */
+/* BUTTONS STYLE */
 
 .button {
     padding: 10px 30px;
@@ -147,7 +151,7 @@ header {
     height: auto;
 }
 
-/* SECCIÓN ABOUT ME */
+/* SECTION ABOUT ME */
 
 .about {
     display: flex;
@@ -216,3 +220,51 @@ header {
     text-align: center;
     font-size: 1.4rem;
 }
+
+/* SECTION SKILLS */
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 140px;
+}
+
+.title-skills {
+    text-align: center;
+}
+
+.skill-img img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+}
+
+.skill-description h3 {
+    color: var(--light-blue);
+}
+
+.skill-left,
+.skill-right {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+
+}
+
+.skill-right {
+    flex-direction: row-reverse;
+}
+
+.skill-final {
+    text-align: center;
+}
+
+.text-chaos {
+    font-family: var(--font-heading);
+    color: var(--indigo-velvet);
+    font-size: 2.1rem;
+    transform: rotate(-6deg);
+    margin-bottom: 40px;
+}
+
