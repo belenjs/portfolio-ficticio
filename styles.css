@@ -23,6 +23,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-base);
     background-color: var(--color-principal);
@@ -311,7 +315,7 @@ header {
     color: var(--rasperry);
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    min-height: 7px;
+    min-height: 70px;
 }
 
 .card-project:hover {
@@ -333,6 +337,11 @@ header {
     border: 2px solid var(--indigo-velvet);
     border-radius: var(--border-radius);
     padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.terminal:hover {
+    box-shadow: 0 0 20px var(--indigo-velvet);
 }
 
 .terminal-header {
@@ -386,4 +395,55 @@ header {
 .final-signature {
     color: var(--rasperry);
     font-size: 0.8rem;
+}
+
+
+/* SECTION FOOTER */
+
+.footer {
+    background-color: var(--lilac);
+    margin-top: 140px;
+    padding: 20px;
+    color: var(--blue);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.footer-brand img {
+    width: 55px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+}
+
+.footer-brand img:hover {
+    transform: scale(1.1) rotate(-10deg);
+}
+
+.footer-brand p {
+    font-weight: bolder;
+}
+
+.footer-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-description p:first-child {
+    text-align: right;
+}
+
+.footer-description p:last-child {
+    font-size: 0.75rem;
+    margin-top: 5px;
 }
