@@ -317,6 +317,73 @@ header {
 .card-project:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px var(--indigo-velvet);
-    
+}
 
+
+/* SECTION CONTACT */
+
+.contact {
+    margin-top: 140px;
+}
+
+.terminal {
+    max-width: 800px;
+    margin-inline: auto;
+    background-color: rgb(from var(--blue) r g b / 20%);
+    border: 2px solid var(--indigo-velvet);
+    border-radius: var(--border-radius);
+    padding: 30px;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--indigo-velvet);
+    padding-bottom: 15px;
+}
+
+.terminal-header-text {
+    color: var(--light-blue);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-dots span {
+    width: 12px;
+    height: 12px;
+    background-color: var(--rasperry);
+    border-radius: 50%;
+}
+
+.terminal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.terminal-status {
+    color: var(--light-blue);
+    font-size: 0.8rem;
+}
+
+.terminal-links {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.terminal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.final-signature {
+    color: var(--rasperry);
+    font-size: 0.8rem;
 }
