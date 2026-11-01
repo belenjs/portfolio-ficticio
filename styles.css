@@ -447,3 +447,51 @@ header {
     font-size: 0.75rem;
     margin-top: 5px;
 }
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* MEDIA QUERIES */
+/* Cuando el ancho de pantalla es de 768px o menos */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    .topbar-nav {
+        display: none;
+    }
+
+    .topbar-contact {
+        display: none;
+    }
+
+    .topbar-nav.menu-open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        order: 2;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .topbar img {
+        width: 65px;
+        height: auto;
+    }
+}
