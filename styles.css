@@ -469,12 +469,29 @@ header {
 
 .menu-toggle {
     display: none;
+    background-color: var(--blue);
+    color: var(--lilac);
+    border: 2px solid var(--rasperry);
+    border-radius: 3px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(-5deg);
 }
 
 
 /* MEDIA QUERIES */
 /* Cuando el ancho de pantalla es de 768px o menos */
 @media (max-width: 768px) {
+
+    .topbar-logo img {
+        width: 80px;
+        height: auto;
+    }
+
     .hero-container {
         flex-direction: column;
         width: 100%;
@@ -524,6 +541,28 @@ header {
         order: 1;
     }
 
+    .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: var(--rasperry);
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
     .topbar-nav {
         display: none;
     }
@@ -544,11 +583,6 @@ header {
 
     .topbar {
         flex-wrap: wrap;
-    }
-
-    .topbar img {
-        width: 65px;
-        height: auto;
     }
 
     .about {
