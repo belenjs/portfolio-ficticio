@@ -65,7 +65,7 @@ a {
 
 /* TOPBAR AND NAVBAR  STYLE*/
 header {
-    padding: 20px 40px;
+    padding: 10px 40px;
 }
 
 .topbar {
@@ -127,6 +127,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: calc(100vh - 100px);
 }
 
 .hero-container {
@@ -167,6 +168,10 @@ header {
     border-radius: var(--border-radius);
     max-width: 100%;
     height: auto;
+}
+
+.text-no-wrap {
+        white-space: nowrap;
 }
 
 /* SECTION ABOUT ME */
@@ -484,7 +489,7 @@ header {
 
 
 /* MEDIA QUERIES */
-/* Cuando el ancho de pantalla es de 768px o menos */
+/* MÓVIL: Cuando el ancho de pantalla es de 768px o menos */
 @media (max-width: 768px) {
 
     .topbar-logo img {
@@ -697,6 +702,13 @@ header {
         gap: 10px;
     }
 
+    .terminal-links .button {
+        width: 100%;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+
     .footer {
         margin-top: 70px;
     }
@@ -714,5 +726,88 @@ header {
 
     .footer-description p:first-child {
         text-align: center;
+        font-size: 1rem;
+    }
+}
+
+/* TABLETS: Cuando el ancho de pantalla es de 769px a 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .topbar {
+        padding: 20px;
+    }
+
+    .topbar-nav {
+        gap: 15px;
+    }
+
+    .topbar-nav a {
+        white-space: nowrap;
+    }
+
+    .topbar-contact .button {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+
+    .hero-container {
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .hero img {
+        width: 350px;
+    }
+
+    .text-no-wrap {
+        white-space: nowrap;
+    }
+
+    .hero .button-primary {
+        padding: 8px 20px;
+        font-size: 1.2rem;
+    }
+
+    .about {
+        padding: 0 25px;
+    }
+
+    .skills {
+        padding: 0 25px;
+    }
+
+    .skill-left,
+    .skill-right {
+        gap: 40px;
+    }
+
+    .projects {
+        padding: 0 25px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact {
+        padding: 0 25px;
+    }
+
+    .terminal-links .button {
+        padding: 8px 20px;
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding: 20px 25px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+
+    .footer-description p:first-child {
+        font-size: 1rem;
     }
 }
