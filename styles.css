@@ -150,18 +150,51 @@ header {
 
 .container-img {
     min-width: 0;
+    position: relative;
+    isolation: isolate;
+    border-radius: var(--border-radius);
 }
+
+.container-img::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: calc(var(--border-radius) + 3px);
+
+    background: conic-gradient(
+        from var(--neon-angle),
+        var(--light-blue) 0%,
+        var(--rasperry) 15%,
+        #ffffff 18%,
+        var(--rasperry) 21%,
+        var(--light-blue) 28%,
+        var(--light-blue) 100%
+    );
+
+    box-shadow: 0 0 15px var(--indigo-velvet);
+    animation: neon-rotate 3s linear infinite;
+    z-index: -1;
+}
+
 
 .presentation-explosion {
     margin-bottom: 30px;
 }
 
+
+
 .explosion-text {
-    font-family: var(--font-heading);
+    font-family: "Permanent Marker";
     font-size: 2.6rem;
     font-weight: bolder;
     color: var(--rasperry);
+    display: flex;
+    justify-content: center;
     
+}
+
+.explosion-text span {
+    display: inline-block;
 }
 
 .hero img {
@@ -812,3 +845,26 @@ header {
         font-size: 1rem;
     }
 }
+
+
+/* ANIMACIONES */
+/* SECCIÓN HERO */
+@property --neon-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes neon-rotate {
+    to {
+        --neon-angle: 360deg;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container-img::before {
+        animation: none;
+    }
+}
+
+
