@@ -23,7 +23,7 @@ enlacesMenu.forEach(function(enlace) {
 });
 
 
-
+/* Animación texto "BOOM" de la sección HERO */
 const boomLetters = document.querySelectorAll(".explosion-text span");
 
 if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
@@ -48,4 +48,44 @@ if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
         stagger: 0.12,
         delay: 1.2
     });
+}
+
+/* Animación del sello "WANTED" de la sección ABOUT ME */
+
+gsap.registerPlugin(ScrollTrigger);
+
+const wantedStamp = document.querySelector(".case-file-header-wanted");
+
+if (wantedStamp && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+
+    const stampTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".case-file",
+            start: "top 65%",
+            once: true
+        }
+    });
+
+    // 1. El sello cae sobre el expediente
+    stampTimeline.from(wantedStamp, {
+        scale: 3,
+        rotation: -30,
+        opacity: 0,
+        duration: 0.65,
+        ease: "back.out(1.5)"
+    });
+
+    // 2. El expediente vibra en el momento del impacto
+    stampTimeline.fromTo(".case-file",
+        { x: -4 },
+        {
+            x: 0,
+            duration: 0.05,
+            repeat: 5,
+            yoyo: true,
+            ease: "none",
+            clearProps: "x"
+        },
+        0.45
+    );
 }
