@@ -66,7 +66,6 @@ if (wantedStamp && window.matchMedia("(prefers-reduced-motion: no-preference)").
         }
     });
 
-    // 1. El sello cae sobre el expediente
     stampTimeline.from(wantedStamp, {
         scale: 3,
         rotation: -30,
@@ -75,7 +74,6 @@ if (wantedStamp && window.matchMedia("(prefers-reduced-motion: no-preference)").
         ease: "back.out(1.5)"
     });
 
-    // 2. El expediente vibra en el momento del impacto
     stampTimeline.fromTo(".case-file",
         { x: -4 },
         {
@@ -88,4 +86,88 @@ if (wantedStamp && window.matchMedia("(prefers-reduced-motion: no-preference)").
         },
         0.45
     );
+}
+
+/* Animación de la terminal en la sección CONTACT */
+
+const terminal = document.querySelector(".terminal");
+const typingText = document.querySelector(".typing-text");
+const typingCursor = document.querySelector(".typing-cursor");
+
+if (terminal && typingText && typingCursor) {
+
+    const fullText = typingText.dataset.text;
+
+    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+        const typingState = { characters: 0 };
+
+        const terminalTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".terminal",
+                start: "top 80%",
+                once: true
+            }
+        });
+
+        terminalTimeline.from(".terminal", {
+            y: 50,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power3.out"
+        });
+
+        terminalTimeline.set(typingCursor, {
+            visibility: "visible"
+        });
+
+        terminalTimeline.to(typingState, {
+            characters: fullText.length,
+            duration: 2,
+            ease: "none",
+
+            onUpdate: () => {
+                typingText.textContent = fullText.slice(
+                    0,
+                    Math.floor(typingState.characters)
+                );
+            },
+
+            onComplete: () => {
+                typingText.textContent = fullText;
+            }
+        });
+
+        terminalTimeline.set(typingCursor, {
+            visibility: "hidden"
+        });
+
+        terminalTimeline.from(
+            ".terminal-content > .text-header, .terminal-description",
+            {
+                y: 15,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.2,
+                ease: "power2.out"
+            }
+        );
+
+        terminalTimeline.from(".terminal-links a", {
+            y: 15,
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
+
+        terminalTimeline.from(".terminal-footer p", {
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.2
+        });
+
+    } else {
+        typingText.textContent = fullText;
+        typingCursor.style.display = "none";
+    }
 }

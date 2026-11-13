@@ -323,7 +323,14 @@ header {
     font-size: 2.6rem;
     transform: rotate(-4deg);
     margin-bottom: 40px;
-    text-decoration: line-through;
+    
+    text-shadow:
+        0 0 5px var(--lilac),
+        0 0 12px var(--rasperry),
+        0 0 24px var(--rasperry),
+        0 0 45px var(--indigo-velvet);
+
+    animation: neon-flicker 2s infinite;
 }
 
 
@@ -453,6 +460,27 @@ header {
 .final-signature {
     color: var(--rasperry);
     font-size: 0.8rem;
+
+    text-shadow: 0 0 8px var(--rasperry);
+    animation: signature-flicker 3s infinite;
+}
+
+.terminal-dots span {
+    animation: terminal-blink 1.5s infinite alternate;
+}
+
+.terminal-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.terminal-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.typing-cursor {
+    visibility: hidden;
+    color: var(--rasperry);
+    animation: cursor-blink 0.7s steps(1) infinite;
 }
 
 
@@ -861,10 +889,66 @@ header {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .container-img::before {
-        animation: none;
+/* SECCIÓN SKILLS */
+@keyframes neon-flicker {
+    0%, 18%, 22%, 40%, 44%, 65%, 69%, 85%, 89%, 100% {
+        opacity: 1;
+    }
+
+    20%, 42%, 67%, 87% {
+        opacity: 0.15;
+    }
+
+    21%, 43%, 68%, 88% {
+        opacity: 0.6;
+    }
+}
+
+/* SECCIÓN CONTACT */
+@keyframes terminal-blink {
+    from {
+        opacity: 0.3;
+        box-shadow: none;
+    }
+
+    to {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--rasperry);
+    }
+}
+
+@keyframes signature-flicker {
+    0%, 18%, 22%, 48%, 52%, 78%, 82%, 100% {
+        opacity: 1;
+    }
+
+    20%, 50%, 80% {
+        opacity: 0.15;
+    }
+
+    21%, 51%, 81% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes cursor-blink {
+    50% {
+        opacity: 0;
     }
 }
 
 
+/* ACCESIBILIDAD - REDUCIR MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+
+    .container-img::before,
+    .text-chaos,
+    .terminal-dots span,
+    .final-signature {
+        animation: none;
+    }
+
+    .typing-cursor {
+        display: none;
+    }
+}
