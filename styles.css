@@ -250,7 +250,7 @@ header {
 }
 
 .case-file-header-wanted {
-    padding: 15px 25px;
+    padding: 25px 30px;
     border-radius: 3px;
     border: 5px solid var(--rasperry);
     box-shadow: 0 10px 15px var(--rasperry);
@@ -259,7 +259,12 @@ header {
     transform: rotate(-8deg);
     text-shadow: 0 5px 8px var(--rasperry);
     font-family: var(--font-heading);
+    margin-right: 80px;
     
+}
+
+.case-file-header-wanted p {
+    font-size: 1.8rem;
 }
 
 .case-file-header-description {
@@ -320,7 +325,7 @@ header {
 .text-chaos {
     font-family: var(--font-heading);
     color: var(--indigo-velvet);
-    font-size: 2.6rem;
+    font-size: 3.6rem;
     transform: rotate(-4deg);
     margin-bottom: 40px;
     
@@ -654,7 +659,7 @@ header {
 
     .about {
         margin-top: 70px;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .case-file {
@@ -662,19 +667,27 @@ header {
         gap: 25px;
     }
 
+    .case-file-header-description {
+        align-self: stretch;
+    }
+
     .case-file-header {
         flex-direction: column;
         gap: 30px;
-        align-items: stretch;
+        align-items: center;
     }
 
     .case-file-header-wanted {
-        align-self: center;
         padding: 10px 20px;
+        margin-right: 0;
     }
 
     .case-file p {
         font-size: 1rem;
+    }
+
+    .case-file-header-wanted p {
+        font-size: 1.8rem;
     }
 
     .case-file p.case-file-selection {
@@ -833,6 +846,15 @@ header {
 
     .about {
         padding: 0 25px;
+    }
+
+    .case-file-header-wanted {
+        margin-right: 60px;
+        padding: 20px 25px;
+    }
+
+    .case-file-header-wanted p {
+        font-size: 1.6rem;
     }
 
     .skills {

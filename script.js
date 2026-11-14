@@ -74,18 +74,20 @@ if (wantedStamp && window.matchMedia("(prefers-reduced-motion: no-preference)").
         ease: "back.out(1.5)"
     });
 
+    
     stampTimeline.fromTo(".case-file",
         { x: -4 },
         {
             x: 0,
             duration: 0.05,
-            repeat: 5,
+            repeat: 6,
             yoyo: true,
             ease: "none",
             clearProps: "x"
         },
         0.45
     );
+
 }
 
 /* Animación de la terminal en la sección CONTACT */
