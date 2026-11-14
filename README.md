@@ -11,6 +11,7 @@ La web estará diseñada para adaptarse a diferentes tamaños de pantalla y cont
 portfolio-ficticio:
 - /index.html
 - /styles.css
+- /script.js
 - /README.md
 
 ## Tecnologías utilizadas
@@ -19,6 +20,8 @@ portfolio-ficticio:
 - Flexbox
 - CSS Grid
 - Media Queries
+- JavaScript
+- GSAP
 
 ## Secciones
 La página estará formada por las siguientes secciones:
@@ -54,7 +57,7 @@ El proyecto podrá consultarse online una vez realizado su despliegue.
 Enlace al proyecto: pendiente.
 
 ## Estado del proyecto
-En proceso.
+Finalizado.
 
 ## Autoría
 Belén Jiménez Sánchez - Proyecto parte de las prácticas del ciclo formativo de Desarrollo de Aplicaciones Web (DAW).
